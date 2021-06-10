@@ -31,3 +31,20 @@ window.onscroll = function()
 }
 
 
+//Open Mobile Menu 
+
+let hamburgerBtn = document.querySelector(".header__hamburger");
+
+hamburgerBtn.addEventListener("click", function() 
+{
+    let first = document.querySelector(".first");
+    let second = document.querySelector(".second");
+    let third = document.querySelector(".third");
+    let nav = document.querySelector(".header__nav");
+
+    first.classList.toggle("first--open");
+    second.classList.toggle("second--open");
+    third.classList.toggle("third--open");
+    nav.classList.toggle("header__nav--open");
+
+});

@@ -25,9 +25,24 @@
         <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
         <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
         <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
         <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+        $(document).ready(function(){
+          $("a").on('click', function(event) {
+            if (this.hash !== "") {
+              event.preventDefault();
+              var hash = this.hash;
+              $('html, body').animate({
+                scrollTop: $(hash).offset().top
+              }, 800, function(){
+                window.location.hash = hash;
+              });
+            }
+          });
+        });
+        </script> 
 
     </head>
     <body>
@@ -36,14 +51,19 @@
             <a href="#" class="header__logo">
                 <img src="img/logo_white.png">
             </a>
+            <button class="header__hamburger">
+                <span class="first"></span>
+                <span class="second"></span>
+                <span class="third"></span>
+            </button>
             <nav class="header__nav">
-                    <a href="#" class="nav__link">O NAS</a>
-                    <a href="#" class="nav__link">OFERTA</a>
-                    <a href="#" class="nav__link">PORTFOLIO</a>
-                    <a href="#" class="nav__link nav__link--kontakt">KONTAKT</a>
+                    <a href="#onas" class="nav__link">O NAS</a>
+                    <a href="#oferta" class="nav__link">OFERTA</a>
+                    <a href="#portfolio" class="nav__link">PORTFOLIO</a>
+                    <a href="#kontakt" class="nav__link nav__link--kontakt">KONTAKT</a>
 
-                    <a href="#" class="nav__link nav__link--language"><img src="img/PL.png"></a>
-                    <a href="#" class="nav__link nav__link--language"><img src="img/US.png"></a>
+                    <a href="index.html" class="nav__link nav__link--language"><img src="img/PL.png"></a>
+                    <a href="en/index.html" class="nav__link nav__link--language"><img src="img/US.png"></a>
             </nav>
         </header>
 
@@ -54,11 +74,11 @@
                 <span class="typeWrapper__text" ></span>
                 <span class="typeWrapper__text" ></span>
             </div>
-            <a href="#" class="main__link">SPRAWDŹ OFERTĘ</a>
+            <a href="#oferta" class="main__link">SPRAWDŹ OFERTĘ</a>
             
         </main>
 
-        <section class="about">
+        <section class="about" id="onas">
 
             <div class="about__textWrapper" data-aos="fade-right">
                 <div class="textWrapper__text">
@@ -148,14 +168,14 @@
         </section>
 
 
-        <section class="offer">
+        <section class="offer" id="oferta">
             <h2>OFERTA</h2>
             
             <div class="offer__cards">
                 <div class="cards__card">
                     <img src="img/offer/6-sklep.svg" class="card__icon">
                     <h2>SKLEP INTERNETOWY</h2>
-                    <h3>od 1499 PLN</h3>
+                    <h3>od 1699 PLN</h3>
                     <span class="card__profit">Twój spersonalizowany sklep internetowy</span>
                     <span class="card__profit">5 zakładek i 20 produktów</span>
                     <span class="card__profit">Możliwość edycji oraz wsparcie techniczne</span>
@@ -175,7 +195,7 @@
                 <div class="cards__card">
                     <img src="img/offer/2-stronawww.svg" class="card__icon">
                     <h2>TWOJA STRONA WWW</h2>
-                    <h3>od 599 PLN</h3>
+                    <h3>od 699 PLN</h3>
                     <span class="card__profit">Indywidualna szata graficzna</span>
                     <span class="card__profit">Hosting przez rok</span>
                     <span class="card__profit">Do 5 dowolnych poprawek</span>
@@ -205,7 +225,7 @@
                 <div class="cards__card">
                     <img src="img/offer/5-socialmedia.svg" class="card__icon">
                     <h2>SOCIAL MEDIA</h2>
-                    <h3>od 599 PLN</h3>
+                    <h3>od 999 PLN</h3>
                     <span class="card__profit">Facebook oraz Instagram</span>
                     <span class="card__profit">Codzienne posty</span>
                     <span class="card__profit">Indywidualne grafiki i reklamy</span>
@@ -215,7 +235,7 @@
         </section>
 
 
-        <section class="portfolio">
+        <section class="portfolio" id="portfolio">
 
             <h2>PORTFOLIO</h2>
 
@@ -239,6 +259,24 @@
                 <a href="www.hegemon.com.pl" class="example__link">Zobacz <br><br> Hegemon</a>
             </div>
         </section>
+
+        <section class="contact" id="kontakt">
+                <h2 class="contact__h2">KONTAKT</h2>
+                <div class="contact__info">
+                    <a class="info__fb" href="https://www.facebook.com/ITSolutionsPL/"><img src="img/fblogo.png">fb.com/ITSolutionsPL</a>
+                    <a class="info__mail" ><img src="img/mailicon.png">itsolutions.kontakt@gmail.com</a>
+                </div>
+                <form class="contact__form" id="contact__form" name="contact__form" method="post" onsubmit="return validateForm()" action="">
+                <input type="text" class="form__input form__input--name" id="form__input--name" name="form__input--name" required placeholder="Imię...">
+                <input type="text" class="form__input form__input--email" id="form__input--email" name="form__input--email" required placeholder="E-mail...">
+                <textarea class="form__textarea" id="form__textarea" name="form__textarea" placeholder="Wiadomość..."></textarea>
+                <input type="submit" class="form__submit" name="form__submit" id="form__submit" value="Wyślij">
+                </form>
+        </section>
+
+        <footer class="footer">
+            <span class="footer__copyright">© 2021 ITSolutions. Wszystkie prawa zastrzeżone.</span>
+        </footer>
 
 
         <script src="app.js" async defer></script>
