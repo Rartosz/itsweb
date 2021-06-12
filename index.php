@@ -1,3 +1,16 @@
+<?php 
+
+if(isset($_POST['form__submit'])){
+    $to = "itsolutions.kontakt@gmail.com";
+    $from = $_POST['form__input--email']; 
+    $name = $_POST['form__input--name'];
+    $message = $name . " " . $from . " napisal: " . $_POST['form__textarea'];
+    
+    mail($to,$from,$message);
+    }
+
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -42,10 +55,17 @@
             }
           });
         });
-        </script> 
+        </script>
 
     </head>
     <body>
+
+        <div class="preloader">
+            <div class="dash uno"></div>
+            <div class="dash dos"></div>
+            <div class="dash tres"></div>
+            <div class="dash cuatro"></div>
+        </div>
 
         <header class="header">
             <a href="#" class="header__logo">
@@ -179,7 +199,7 @@
                     <span class="card__profit">Twój spersonalizowany sklep internetowy</span>
                     <span class="card__profit">5 zakładek i 20 produktów</span>
                     <span class="card__profit">Możliwość edycji oraz wsparcie techniczne</span>
-                    <button class="card__select">Wybieram</button>
+                    <a class="card__select" href="#kontakt">Wybieram</a>
                 </div>
 
                 <div class="cards__card">
@@ -189,7 +209,7 @@
                     <span class="card__profit">Dodanie elementów na stronę</span>
                     <span class="card__profit">Unowocześnienie strony</span>
                     <span class="card__profit">Dodanie nowych funkcjonalności</span>
-                    <button class="card__select">Wybieram</button>
+                    <a class="card__select" href="#kontakt">Wybieram</a>
                 </div>
 
                 <div class="cards__card">
@@ -199,7 +219,7 @@
                     <span class="card__profit">Indywidualna szata graficzna</span>
                     <span class="card__profit">Hosting przez rok</span>
                     <span class="card__profit">Do 5 dowolnych poprawek</span>
-                    <button class="card__select">Wybieram</button>
+                    <a class="card__select" href="#kontakt">Wybieram</a>
                 </div>
 
                 <div class="cards__card">
@@ -209,7 +229,7 @@
                     <span class="card__profit">Logo Twojej firmy</span>
                     <span class="card__profit">Grafika na konkretne wydarzenie</span>
                     <span class="card__profit">Reklamy</span>
-                    <button class="card__select">Wybieram</button>
+                    <a class="card__select" href="#kontakt">Wybieram</a>
                 </div>
 
                 <div class="cards__card">
@@ -219,7 +239,7 @@
                     <span class="card__profit">Dodanie nowej funkcjonalności</span>
                     <span class="card__profit">Zmiany w treści</span>
                     <span class="card__profit">Zmiany w wyglądzie</span>
-                    <button class="card__select">Wybieram</button>
+                    <a class="card__select" href="#kontakt">Wybieram</a>
                 </div>
 
                 <div class="cards__card">
@@ -229,7 +249,7 @@
                     <span class="card__profit">Facebook oraz Instagram</span>
                     <span class="card__profit">Codzienne posty</span>
                     <span class="card__profit">Indywidualne grafiki i reklamy</span>
-                    <button class="card__select">Wybieram</button>
+                    <a class="card__select" href="#kontakt">Wybieram</a>
                 </div>
             </div>
         </section>
@@ -266,8 +286,8 @@
                     <a class="info__fb" href="https://www.facebook.com/ITSolutionsPL/"><img src="img/fblogo.png">fb.com/ITSolutionsPL</a>
                     <a class="info__mail" ><img src="img/mailicon.png">itsolutions.kontakt@gmail.com</a>
                 </div>
-                <form class="contact__form" id="contact__form" name="contact__form" method="post" onsubmit="return validateForm()" action="">
-                <input type="text" class="form__input form__input--name" id="form__input--name" name="form__input--name" required placeholder="Imię...">
+                <form class="contact__form" id="contact__form" name="contact__form" method="POST" onsubmit="return validateForm()" action="">
+                <input type="text" class="form__input form__input--name" id="form__input--name" name="form__input--name" placeholder="Imię...">
                 <input type="text" class="form__input form__input--email" id="form__input--email" name="form__input--email" required placeholder="E-mail...">
                 <textarea class="form__textarea" id="form__textarea" name="form__textarea" placeholder="Wiadomość..."></textarea>
                 <input type="submit" class="form__submit" name="form__submit" id="form__submit" value="Wyślij">

@@ -48,6 +48,164 @@ body
 @media only screen and (min-width: 1350px) {
 
 
+.preloader 
+{
+    position:fixed;
+    width:100vw;
+    height:100vh;
+    background: rgb(229,51,51);
+    background: linear-gradient(237deg, rgba(229,51,51,1) 1%, rgba(59,116,248,1) 80%);
+    background-size: 200% 200%;
+    z-index:99999999;
+    animation: change 8s ease-in-out infinite;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+
+
+    .dash {
+        margin: 0 30px;
+        width: 70px;
+        height: 15px;
+        border-radius: 8px;
+        background: #ffffff;
+        box-shadow: 0 0 5px 0 #ffffff;
+      }
+      
+      .uno {
+        margin-right: -40px;
+        transform-origin: center left;
+        animation: spin 3s linear infinite;  
+      }
+      
+      .dos {
+        transform-origin: center right;
+        animation: spin2 3s linear infinite;
+        animation-delay: .2s;
+      }
+      
+      .tres {
+        transform-origin: center right;
+        animation: spin3 3s linear infinite;
+        animation-delay: .3s;
+      }
+      
+      .cuatro {
+        transform-origin: center right;
+        animation: spin4 3s linear infinite;
+        animation-delay: .4s;
+      }
+      
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        25% {
+          transform: rotate(360deg);
+        }
+        30% {
+          transform: rotate(370deg);
+        }
+        35% {
+          transform: rotate(360deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      
+      @keyframes spin2 {
+        0% {
+          transform: rotate(0deg);
+        }
+        20% {
+          transform: rotate(0deg);
+        }
+        30% {
+          transform: rotate(-180deg);
+        }
+        35% {
+          transform: rotate(-190deg);
+        }
+        40% {
+          transform: rotate(-180deg);
+        }
+        78% {
+          transform: rotate(-180deg);
+        }
+        95% {
+          transform: rotate(-360deg);
+        }
+        98% {
+          transform: rotate(-370deg);
+        }
+        100% {
+          transform: rotate(-360deg);
+        }
+      }
+      
+      @keyframes spin3 {
+        0% {
+          transform: rotate(0deg);
+        }
+        27% {
+          transform: rotate(0deg);  
+        }
+        40% {
+          transform: rotate(180deg);
+        }
+        45% {
+          transform: rotate(190deg);
+        }
+        50% {
+          transform: rotate(180deg);
+        }
+        62% {
+          transform: rotate(180deg);
+        }
+        75% {
+          transform: rotate(360deg);
+        }
+        80% {
+          transform: rotate(370deg);
+        }
+        85% {
+          transform: rotate(360deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      
+      @keyframes spin4 {
+        0% {
+          transform: rotate(0deg);
+        }
+        38% {
+          transform: rotate(0deg);
+        }
+        60% {
+          transform: rotate(-360deg);
+        }
+        65% {
+          transform: rotate(-370deg);
+        }
+        75% {
+          transform: rotate(-360deg);
+        }
+        100% {
+          transform: rotate(-360deg);
+        }
+      }
+}
+
+.preloader--close 
+{
+    transition:3s;
+    opacity:0;
+}
 
 .header 
 {
@@ -450,6 +608,7 @@ body
                 padding:5px 15px;
                 color:#3B74F8;
                 border:1px solid #3B74F8;
+                @include link;
                 border-radius:25px;
                 margin-top:10px;
                 font-family: $siteFont;
@@ -734,6 +893,164 @@ body
 {
 
 
+    .preloader 
+{
+    position:fixed;
+    width:100vw;
+    height:100vh;
+    background: rgb(229,51,51);
+    background: linear-gradient(237deg, rgba(229,51,51,1) 1%, rgba(59,116,248,1) 80%);
+    background-size: 200% 200%;
+    z-index:99999999;
+    animation: change 8s ease-in-out infinite;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+
+
+    .dash {
+        margin: 0 25px;
+        width: 50px;
+        height: 15px;
+        border-radius: 8px;
+        background: #ffffff;
+        box-shadow: 0 0 5px 0 #ffffff;
+      }
+      
+      .uno {
+        margin-right: -30px;
+        transform-origin: center left;
+        animation: spin 3s linear infinite;  
+      }
+      
+      .dos {
+        transform-origin: center right;
+        animation: spin2 3s linear infinite;
+        animation-delay: .2s;
+      }
+      
+      .tres {
+        transform-origin: center right;
+        animation: spin3 3s linear infinite;
+        animation-delay: .3s;
+      }
+      
+      .cuatro {
+        transform-origin: center right;
+        animation: spin4 3s linear infinite;
+        animation-delay: .4s;
+      }
+      
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        25% {
+          transform: rotate(360deg);
+        }
+        30% {
+          transform: rotate(370deg);
+        }
+        35% {
+          transform: rotate(360deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      
+      @keyframes spin2 {
+        0% {
+          transform: rotate(0deg);
+        }
+        20% {
+          transform: rotate(0deg);
+        }
+        30% {
+          transform: rotate(-180deg);
+        }
+        35% {
+          transform: rotate(-190deg);
+        }
+        40% {
+          transform: rotate(-180deg);
+        }
+        78% {
+          transform: rotate(-180deg);
+        }
+        95% {
+          transform: rotate(-360deg);
+        }
+        98% {
+          transform: rotate(-370deg);
+        }
+        100% {
+          transform: rotate(-360deg);
+        }
+      }
+      
+      @keyframes spin3 {
+        0% {
+          transform: rotate(0deg);
+        }
+        27% {
+          transform: rotate(0deg);  
+        }
+        40% {
+          transform: rotate(180deg);
+        }
+        45% {
+          transform: rotate(190deg);
+        }
+        50% {
+          transform: rotate(180deg);
+        }
+        62% {
+          transform: rotate(180deg);
+        }
+        75% {
+          transform: rotate(360deg);
+        }
+        80% {
+          transform: rotate(370deg);
+        }
+        85% {
+          transform: rotate(360deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      
+      @keyframes spin4 {
+        0% {
+          transform: rotate(0deg);
+        }
+        38% {
+          transform: rotate(0deg);
+        }
+        60% {
+          transform: rotate(-360deg);
+        }
+        65% {
+          transform: rotate(-370deg);
+        }
+        75% {
+          transform: rotate(-360deg);
+        }
+        100% {
+          transform: rotate(-360deg);
+        }
+      }
+}
+
+.preloader--close 
+{
+    transition:3s;
+    opacity:0;
+}
     .header 
     {
         width:100vw;
@@ -1204,6 +1521,7 @@ body
                     color:#3B74F8;
                     border:1px solid #3B74F8;
                     border-radius:25px;
+                    @include link;
                     margin-top:10px;
                     font-family: $siteFont;
                     font-size:16px;

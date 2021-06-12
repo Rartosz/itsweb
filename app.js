@@ -48,3 +48,54 @@ hamburgerBtn.addEventListener("click", function()
     nav.classList.toggle("header__nav--open");
 
 });
+
+
+
+// onload delate preloader 
+
+window.onload = function() 
+{
+    let preloader = document.querySelector(".preloader");
+    preloader.classList.add("preloader--close");
+    setTimeout(function() 
+    {
+        preloader.remove();
+    },3000);
+}
+
+
+
+
+// FORM VALIDATE
+
+
+function validateForm() {
+    let input_email = document.forms["contact__form"]["form__input--email"].value;
+    if (input_email=="" || input_email == null) {
+      alert("Proszę wpisać swój adres mailowy :) ");
+      return false;
+    }
+    else 
+    {
+      alert("Dziękujemy za kontakt!");
+    }
+  } 
+
+
+
+// wybierz pakiet 
+
+let selectBtn = [...document.querySelectorAll(".card__select")];
+let titles = document.querySelectorAll(".cards__card h2");
+for(let i=0; i<selectBtn.length; i++) 
+{
+    selectBtn[i].addEventListener("click", function() 
+    {
+        const textArea = document.querySelector(".form__textarea");
+        textArea.innerHTML=" ";
+        textArea.innerHTML="Wybieram pakiet: " + titles[i].innerHTML;
+    });
+}
+
+
+
